@@ -1,0 +1,27 @@
+
+<div class="products col-xs-18 col-sm-6 col-md-4"
+    *ngFor="let product of products; let currentIndex = index;">
+    <div class="product-detail"  >
+        <div class="thumbnail">
+     
+            <img class="img-rounded img-responsive"
+                 [src]="product.imageUrl"
+                 [alt]="product.name + ' image'">
+     
+            <div class="caption" >
+                <h4>{{product.name}}</h4>
+                <p> {{product.description}}</p>
+                <button class="btn btn-primary">Get It Now</button>
+               
+            </div>
+     
+        </div>
+     </div>
+
+
+</div>
+
+<app-messages></app-messages>
+
+
+    
