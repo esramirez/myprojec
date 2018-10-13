@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { PRODUCTS } from './mock-products';
 import { Product } from './products.model';
-import { MessageService } from '../../message.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
@@ -17,7 +16,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ProductService {
   private productsUrl = "http://spreadsheets.google.com/feeds/list/1BkpC8T03QCa1rs_9nZmpWbvMGYvAfhN-S4U6sDiuanU/1/public/values?alt=json";
 
-  constructor(private messageService: MessageService, private http: HttpClient, 
+  constructor(private http: HttpClient, 
               private sanitizer: DomSanitizer) { }
 
   list(): Observable<Product[]>{

@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { ProjectsModule } from './projects/projects.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductsComponent } from './products/products.component';
-import { MessagesComponent } from './messages/messages.component';
 import { HttpClientModule } from  '@angular/common/http'
 
 
@@ -16,13 +15,11 @@ import { HttpClientModule } from  '@angular/common/http'
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ProductsComponent,
-    MessagesComponent
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProjectsModule,
     HttpClientModule
     
   ],
