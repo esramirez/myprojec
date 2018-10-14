@@ -8,6 +8,7 @@ export class Product {
     imageUrl: SafeUrl;
     category: string;
     originalProject: Product;
+    selected: boolean;
     
   
     constructor(obj?: any) {
