@@ -9,6 +9,7 @@ export class Product {
     category: string;
     originalProject: Product;
     selected: boolean;
+    postUrl: SafeUrl;
     
   
     constructor(obj?: any) {
@@ -18,6 +19,7 @@ export class Product {
       this.description = (obj && obj.description) || null;
       this.category = (obj && obj.category) || null;
       this.imageUrl = (obj && obj.imageUrl) || null;
+      this.postUrl = (obj && obj.postUrl) || null;
     }
   }
   

@@ -40,14 +40,23 @@ export class ProductService {
         productSeries['name']=JSON.stringify(result['gsx$name']['$t']);
         var description = JSON.stringify(result['gsx$description']['$t'])
         if (description.length > 50){
-          description = description.substr(0, 50) + "..."
+          description = description.substr(0, 100) + "..."
         }
         productSeries['description'] =description;
         var formattedUrl = JSON.stringify(result['gsx$imageurl']['$t']).replace('"', '');
         formattedUrl = formattedUrl.replace('"', '');
-        console.log(formattedUrl)
+          //this is for the product post url
+        var formattedPostUrl = JSON.stringify(result['gsx$posturl']['$t']).replace('"', '');
+        formattedPostUrl = formattedPostUrl.replace('"', '');
+        console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        console.log(JSON.stringify(result['gsx$posturl']['$t']))
+        console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        console.log("<<<<<<<<<<<<<<<<<<<<<" )
         var safeUrl = this.sanitizer.bypassSecurityTrustUrl(formattedUrl);
-        productSeries['imageUrl']=safeUrl; //(JSON.stringify(result['gsx$imageurl']['$t']));
+        var safePostUrl = this.sanitizer.bypassSecurityTrustUrl(formattedPostUrl);
+        productSeries['imageUrl']=safeUrl;
+        productSeries['postUrl']=safePostUrl;
         returnArray.push(productSeries);
         console.log("<<<<<<<<<<<<<<<<<<<<<" )
         console.log(productSeries['imageUrl'])
