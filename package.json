@@ -1,8 +1,8 @@
 {
   "name": "myproject",
   "version": "1.0.0",
-  "engines":{
-    "node":"10.0.0"
+  "engines": {
+    "node": "10.0.0"
   },
   "scripts": {
     "ng": "ng",
@@ -40,7 +40,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.7.0",
+    "@angular-devkit/build-angular": "^0.7.5",
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
