@@ -14,7 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class ProductService {
-  private productsUrl = "http://spreadsheets.google.com/feeds/list/1BkpC8T03QCa1rs_9nZmpWbvMGYvAfhN-S4U6sDiuanU/1/public/values?alt=json";
+  private productsUrl = "https://spreadsheets.google.com/feeds/list/1BkpC8T03QCa1rs_9nZmpWbvMGYvAfhN-S4U6sDiuanU/1/public/values?alt=json";
 
   constructor(private http: HttpClient, 
               private sanitizer: DomSanitizer) { }
