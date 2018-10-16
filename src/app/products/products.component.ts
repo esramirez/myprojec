@@ -3,10 +3,12 @@ import { ProductService } from './shared/product.service';
 import { Product } from './shared/products.model';
 
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  //styleUrls: ['./products.component.css']
+  styleUrls: ['../../../node_modules/ng-masonry-grid/ng-masonry-grid.css']
 })
 export class ProductsComponent implements OnInit {
 

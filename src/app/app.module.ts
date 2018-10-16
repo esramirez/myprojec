@@ -10,9 +10,8 @@ import { ProductsComponent } from './products/products.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component'
-import { ModalModule } from 'ngx-bootstrap/modal'
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { NgMasonryGridModule } from 'ng-masonry-grid';
+
 
 
 @NgModule({
@@ -28,9 +27,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ModalModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    TooltipModule.forRoot()
+    NgMasonryGridModule
     
   ],
   providers: [],

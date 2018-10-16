@@ -37,17 +37,17 @@ export class ProductService {
         console.log('result data\n' + JSON.stringify(result['gsx$name']['$t']) + '\n\n');
         
         
-        productSeries['name']=JSON.stringify(result['gsx$name']['$t']);
-        var description = JSON.stringify(result['gsx$description']['$t'])
+        productSeries['name']=JSON.stringify(result['gsx$name']['$t']).replace(/^"(.+(?="$))"$/, '$1');
+        var description = JSON.stringify(result['gsx$description']['$t']).replace(/^"(.+(?="$))"$/, '$1');
         if (description.length > 50){
           description = description.substr(0, 100) + "..."
         }
         productSeries['description'] =description;
-        var formattedUrl = JSON.stringify(result['gsx$imageurl']['$t']).replace('"', '');
-        formattedUrl = formattedUrl.replace('"', '');
+        var formattedUrl = JSON.stringify(result['gsx$imageurl']['$t']).replace(/^"(.+(?="$))"$/, '$1');;
+
           //this is for the product post url
-        var formattedPostUrl = JSON.stringify(result['gsx$posturl']['$t']).replace('"', '');
-        formattedPostUrl = formattedPostUrl.replace('"', '');
+        var formattedPostUrl = JSON.stringify(result['gsx$posturl']['$t']).replace('"', '').replace(/^"(.+(?="$))"$/, '$1');;
+  
         console.log("<<<<<<<<<<<<<<<<<<<<<" )
         console.log("<<<<<<<<<<<<<<<<<<<<<" )
         console.log(JSON.stringify(result['gsx$posturl']['$t']))

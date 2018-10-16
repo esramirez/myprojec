@@ -1,5 +1,5 @@
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row text-center">
         <div class="col-xs-18 col-sm-6 col-md-4" 
             *ngFor="let product of products; let currentIndex = index;">
@@ -23,7 +23,26 @@
                 </div>
         </div>
     </div>
- </div>
+ </div> -->
+
+ <ng-masonry-grid
+                    [masonryOptions]="{ transitionDuration: '0.8s', gutter: 5 , gutter: 10, originLeft: false,stagger: 30}" 
+                    [useAnimation]="true"
+                    [useImagesLoaded]="true"
+                    [scrollAnimationOptions]="{ animationEffect: 'effect-3', minDuration : 0.4, maxDuration : 0.7 }"
+                    >
+      <!-- Masonry Grid Item -->
+      <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let product of products; let i = index;" > 
+        <!-- Grid Content  -->
+        <img [src]="product.imageUrl"
+        [alt]="product.name + ' image'"/>
+        <div class="card-body">
+                        <h4 class="card-title"><a [href]="product.postUrl" target="_blank">{{product.name}}</a></h4>
+                        <p class="card-text">{{product.description}}</p>
+                        
+                    </div>
+      </ng-masonry-grid-item>
+    </ng-masonry-grid>
 
 
 
