@@ -34,7 +34,7 @@ export class ProductService {
       
       results.forEach((result) => {
         var productSeries = new Product();
-        console.log('result data\n' + JSON.stringify(result['gsx$name']['$t']) + '\n\n');
+        //console.log('result data\n' + JSON.stringify(result['gsx$name']['$t']) + '\n\n');
         
         
         productSeries['name']=JSON.stringify(result['gsx$name']['$t']).replace(/^"(.+(?="$))"$/, '$1');
@@ -43,23 +43,23 @@ export class ProductService {
           description = description.substr(0, 100) + "..."
         }
         productSeries['description'] =description;
-        var formattedUrl = JSON.stringify(result['gsx$imageurl']['$t']).replace(/^"(.+(?="$))"$/, '$1');;
+        var formattedUrl = JSON.stringify(result['gsx$imageurl']['$t']).replace(/^"(.+(?="$))"$/, '$1');
 
           //this is for the product post url
-        var formattedPostUrl = JSON.stringify(result['gsx$posturl']['$t']).replace('"', '').replace(/^"(.+(?="$))"$/, '$1');;
-  
-        console.log("<<<<<<<<<<<<<<<<<<<<<" )
-        console.log("<<<<<<<<<<<<<<<<<<<<<" )
-        console.log(JSON.stringify(result['gsx$posturl']['$t']))
-        console.log("<<<<<<<<<<<<<<<<<<<<<" )
-        console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        var formattedPostUrl = JSON.stringify(result['gsx$posturl']['$t']).replace(/^"(.+(?="$))"$/, '$1');
+     
+        // console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        // console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        // console.log(JSON.stringify(result['gsx$posturl']['$t']))
+        // console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        // console.log("<<<<<<<<<<<<<<<<<<<<<" )
         var safeUrl = this.sanitizer.bypassSecurityTrustUrl(formattedUrl);
         var safePostUrl = this.sanitizer.bypassSecurityTrustUrl(formattedPostUrl);
         productSeries['imageUrl']=safeUrl;
         productSeries['postUrl']=safePostUrl;
         returnArray.push(productSeries);
-        console.log("<<<<<<<<<<<<<<<<<<<<<" )
-        console.log(productSeries['imageUrl'])
+        // console.log("<<<<<<<<<<<<<<<<<<<<<" )
+        // console.log(productSeries['imageUrl'])
         console.log(">>>>>>>>>>>>>>>" )
         console.log(returnArray)
         console.log("<<<<<<<<<<<<<<<<<")
