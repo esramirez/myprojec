@@ -60,9 +60,9 @@ export class ProductService {
         returnArray.push(productSeries);
         // console.log("<<<<<<<<<<<<<<<<<<<<<" )
         // console.log(productSeries['imageUrl'])
-        console.log(">>>>>>>>>>>>>>>" )
-        console.log(returnArray)
-        console.log("<<<<<<<<<<<<<<<<<")
+        // console.log(">>>>>>>>>>>>>>>" )
+        // console.log(returnArray)
+        // console.log("<<<<<<<<<<<<<<<<<")
        
       });
       
